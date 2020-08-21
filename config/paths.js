@@ -1,8 +1,7 @@
-'use strict';
-
 const path = require('path');
 const fs = require('fs');
 const getPublicUrlOrPath = require('react-dev-utils/getPublicUrlOrPath');
+const { resolve } = require('path');
 
 // Make sure any symlinks in the project folder are resolved:
 // https://github.com/facebook/create-react-app/issues/637
@@ -58,6 +57,10 @@ module.exports = {
   appIndexJs: resolveModule(resolveApp, 'src/index'),
   appPackageJson: resolveApp('package.json'),
   appSrc: resolveApp('src'),
+  appSrcComponents: resolveApp('src/app/components'),
+  appSrcComponentsShared: resolve('src/app/components/shared'),
+  appSrcUtils: resolveApp('src/app/utils'),
+  appSrcImages: resolveApp('src/images'),
   appTsConfig: resolveApp('tsconfig.json'),
   appJsConfig: resolveApp('jsconfig.json'),
   yarnLockFile: resolveApp('yarn.lock'),
