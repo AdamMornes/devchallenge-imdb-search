@@ -53,6 +53,7 @@
     "sass-loader": "8.0.2",
     "semver": "6.3.0",
     "style-loader": "0.23.1",
+    "tailwindcss": "^1.7.3",
     "terser-webpack-plugin": "2.3.8",
     "ts-pnp": "1.1.6",
     "url-loader": "2.3.0",
@@ -135,5 +136,8 @@
     "presets": [
       "react-app"
     ]
+  },
+  "devDependencies": {
+    "node-sass": "^4.14.1"
   }
 }
