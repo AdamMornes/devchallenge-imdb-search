@@ -1,7 +1,7 @@
 import React from 'react';
 
-export default function Main() {
+export default () => {
     return(
-        <main className="bg-gray-400 flex-1"></main>
+        <main className="flex-1"></main>
     )
 }
