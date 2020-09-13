@@ -4,9 +4,10 @@ import getMovies from '../api/api';
 
 export default () => {
     useEffect(() => {
-        getMovies.then(values => {
-            console.log(values);
-        })
+        getMovies
+            .then(values => {
+                console.log(values);
+            });
     }, []);
 
     return(
