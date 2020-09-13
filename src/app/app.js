@@ -8,7 +8,7 @@ import Footer from '@shared/footer';
 export default () => {
 	return (
 		<BrowserRouter>
-			<div className="flex flex-col min-h-screen w-screen">
+			<div className="flex flex-col min-h-screen">
 				<Header />
 				<Main />
 				<Footer />

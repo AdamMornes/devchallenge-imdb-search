@@ -34,15 +34,6 @@ export default () => (
                             Best Movie
                         </NavLink>
                     </li>
-                    <li className="flex items-center">
-                        <NavLink
-                        to="/about"
-                        className="hover:text-gray-300 focus:text-gray-300 px-5 py-1" 
-                        activeClassName="underline">
-
-                            About
-                        </NavLink>
-                    </li>
                 </ul>
             </nav>
         </div>
