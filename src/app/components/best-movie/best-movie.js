@@ -1,9 +1,13 @@
 import React from 'react';
 
 export default () => (
-    <div>
-        <p className="my-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vitae porttitor ante, at pharetra magna. Pellentesque eget nulla in elit elementum ultricies quis vel urna. Fusce purus lacus, sodales et convallis eu, euismod ac ipsum. In rutrum ex tincidunt, sodales leo vitae, commodo magna. Quisque gravida ante ipsum, ut ultrices diam convallis fermentum.</p>
-
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vitae porttitor ante, at pharetra magna. Pellentesque eget nulla in elit elementum ultricies quis vel urna. Fusce purus lacus, sodales et convallis eu, euismod ac ipsum. In rutrum ex tincidunt, sodales leo vitae, commodo magna. Quisque gravida ante ipsum, ut ultrices diam convallis fermentum.</p>
+    <div className="relative my-8" style={{ paddingBottom: '56.25%' }}>
+        <iframe
+            className="absolute top-0 left-0 w-full h-full"
+            src="https://www.youtube.com/embed/oHg5SJYRHA0?autoplay=1"
+            frameBorder="0"
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+            title="The Best Movie">
+        </iframe>
     </div>
 );
