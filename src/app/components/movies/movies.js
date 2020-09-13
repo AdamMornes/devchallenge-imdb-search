@@ -17,8 +17,7 @@ export default props => {
     let movies = moviesState.map(movie => (
         <li key={movie.imdbID}>
             <article>
-                <Link
-                    to={`${props.match.url}/${movie.imdbID}`}>
+                <Link to={`${props.match.url}/${movie.imdbID}`}>
 
                     <h2 className="text-xl font-bold leading-tight">{movie.Title}</h2>
                     
