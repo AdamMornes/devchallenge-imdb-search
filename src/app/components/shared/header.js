@@ -2,7 +2,7 @@ import React from 'react';
 import { NavLink, Link } from 'react-router-dom';
 import logo from '@images/logo.png';
 
-export default () => (
+const Header = () => (
     <header className="bg-gray-800 py-3">
         <div className="container flex items-center justify-between text-gray-200 mx-auto">
             <Link to="/" className="flex items-center text-2xl font-mono">
@@ -39,3 +39,5 @@ export default () => (
         </div>
     </header>
 );
+
+export default Header;

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 import getMovies from '../../api/api';
 
-export default props => {
+const Movies = props => {
     const [ movies, setMovies ] = useState([]);
 
     useEffect(() => {
@@ -45,3 +45,5 @@ export default props => {
         </ul>
     ) : null
 };
+
+export default Movies;

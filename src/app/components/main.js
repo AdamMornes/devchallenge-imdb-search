@@ -6,16 +6,16 @@ import Movie from './movies/movie/movie';
 import BestMovie from './best-movie/best-movie';
 import NotFound from './shared/not-found';
 
-export default () => {
-    return(
-        <main className="container mx-auto flex-1">
-            <Switch>
-                <Route path="/movies" component={Movies} exact />
-                <Route path="/movies/:id" component={Movie} />
-                <Route path="/best-movie" component={BestMovie} />
-                <Redirect from="/" to="/movies" exact />
-                <Route component={NotFound} />
-            </Switch>
-        </main>
-    )
-}
+const Main = () => (
+    <main className="container mx-auto flex-1">
+        <Switch>
+            <Route path="/movies" component={Movies} exact />
+            <Route path="/movies/:id" component={Movie} />
+            <Route path="/best-movie" component={BestMovie} />
+            <Redirect from="/" to="/movies" exact />
+            <Route component={NotFound} />
+        </Switch>
+    </main>
+);
+
+export default Main;

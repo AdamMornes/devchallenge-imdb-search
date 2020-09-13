@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default props => {
+const Movie = props => {
     return(
         <div className="grid grid-cols-3 gap-8 my-8 -mx-4">
             <div>
@@ -31,3 +31,5 @@ export default props => {
         </div>
     );
 };
+
+export default Movie;

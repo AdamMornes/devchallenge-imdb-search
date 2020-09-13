@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default () => (
+const BestMovie = () => (
     <div className="relative my-8" style={{ paddingBottom: '56.25%' }}>
         <iframe
             className="absolute top-0 left-0 w-full h-full"
@@ -11,3 +11,5 @@ export default () => (
         </iframe>
     </div>
 );
+
+export default BestMovie;
