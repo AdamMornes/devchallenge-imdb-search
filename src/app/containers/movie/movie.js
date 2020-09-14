@@ -9,6 +9,7 @@ const Movie = props => {
     const { movies, error } = useSelector(state => state);
     const dispatch = useDispatch();
 
+    // need to check and/or load data if it hasn't been loaded yet from movies container
     useEffect(() => {
         if(movies.length <= 0 && !error) {
             dispatch(fetchMoviesData());

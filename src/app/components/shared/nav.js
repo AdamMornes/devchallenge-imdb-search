@@ -22,6 +22,15 @@ const Nav = () => (
                     Best Movie
                 </NavLink>
             </li>
+            <li className="flex items-center">
+                <NavLink
+                to="/search"
+                className="hover:text-gray-300 focus:text-gray-300 px-5 py-1" 
+                activeClassName="underline">
+
+                    Search
+                </NavLink>
+            </li>
         </ul>
     </nav>
 );
