@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
 
 import Header from '@shared/header';
-import Main from '@components/main';
+import Main from '@shared/main';
 import Footer from '@shared/footer';
 
 const App = () => (
