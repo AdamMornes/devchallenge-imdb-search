@@ -26,7 +26,7 @@ const Movies = props => {
     ));
 
     return moviesList.length > 0 ? (
-        <ul className="grid grid-cols-5 gap-4 my-8 -mx-2">
+        <ul className="grid grid-cols-5 gap-4 my-8">
             {moviesList}
         </ul>
     ) : fallback
