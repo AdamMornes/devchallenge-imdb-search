@@ -3,7 +3,7 @@ import { useDispatch, useSelector  } from 'react-redux';
 import { fetchMoviesData } from '@store/actions/creators';
 import MovieCard from '@components/movie-card/movie-card';
 
-const Movies = () => {
+const Movies = props => {
     const { movies, error } = useSelector(state => state);
     const dispatch = useDispatch();
 
@@ -16,9 +16,9 @@ const Movies = () => {
     const moviesList = movies.map(movie => (
         <li key={movie.imdbID}>
             <MovieCard
-                id={movie.imdbID}
                 title={movie.Title}
-                poster={movie.Poster} />
+                poster={movie.Poster}
+                link={`${props.match.url}/${movie.imdbID}`} />
         </li>
     ));
 
