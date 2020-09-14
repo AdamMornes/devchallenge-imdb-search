@@ -7,7 +7,7 @@ const initialState = {
 
 const reducer = (state = initialState, { type, payload } ) => {
     if(type === actionTypes.UPDATE_MOVIES_SUCCESS) {
-        return { 
+        return {
             movies: state.movies.concat(payload.movies),
             error: payload.error
         };
