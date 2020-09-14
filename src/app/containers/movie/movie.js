@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector  } from 'react-redux';
-import NotFound from '../../shared/not-found';
-import { fetchMoviesData } from '../../../store/actions/creators';
+import NotFound from '@shared/not-found';
+import { fetchMoviesData } from '@store/actions/creators';
 
 const Movie = props => {
     let movie = null;

@@ -1,10 +1,10 @@
 import React from 'react';
 import { Route, Redirect, Switch } from 'react-router-dom';
 
-import Movies from './movies/movies';
-import Movie from './movies/movie/movie';
-import BestMovie from './best-movie/best-movie';
-import NotFound from './shared/not-found';
+import Movies from '@containers/movies/movies';
+import Movie from '@containers/movie/movie';
+import BestMovie from '@components/best-movie/best-movie';
+import NotFound from '@shared/not-found';
 
 const Main = () => (
     <main className="container mx-auto flex-1">

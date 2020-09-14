@@ -296,6 +296,9 @@ module.exports = function(webpackEnv) {
         }),
         ...(modules.webpackAliases || {}),
 
+        '@api': paths.appSrcApi,
+        '@store': paths.appSrcStore,
+        '@containers': paths.appSrcContainers,
         '@components': paths.appSrcComponents,
         '@shared': paths.appSrcComponentsShared,
         '@utils': paths.appSrcUtils,
