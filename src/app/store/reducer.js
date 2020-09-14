@@ -5,14 +5,11 @@ const initialState = {
     error: false
 };
 
-const reducer = (state = initialState, action) => {
-    if(action.type === actionTypes.UPDATE_MOVIES) {
+const reducer = (state = initialState, { type, payload } ) => {
+    if(type === actionTypes.UPDATE_MOVIES_SUCCESS) {
         return { 
-            movies: [
-                ...state.movies,
-                action.movies
-            ],
-            error: action.error
+            movies: state.movies.concat(payload.movies),
+            error: payload.error
         };
     }
 

@@ -10,7 +10,7 @@ const movieIds = [
     'tt0120591'
 ];
 
-export default new Promise((resolve, reject) => {
+export const getMovies = new Promise((resolve, reject) => {
     Promise.all(
         movieIds.map(id => axios.post(`${url}&i=${id}`)
     )).then(values => {

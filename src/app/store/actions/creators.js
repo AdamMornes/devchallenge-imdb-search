@@ -1,11 +1,21 @@
 import * as actionTypes from './types';
-import fetchData from '../../api/api';
+import { getMovies } from '../../api/api';
 
-export const getMovies = () => {
-    return {
-        type: actionTypes.UPDATE_MOVIES,
-        payload: fetchData
-            .then(movies => ({ movies, error: false }))
-            .catch(() => ({ movies: [], error: true }))
+export const updateMoviesSuccess = movies => ({
+    type: actionTypes.UPDATE_MOVIES_SUCCESS,
+    payload: { movies, error: false }
+});
+
+export const updateMoviesError = () => ({
+    type: actionTypes.UPDATE_MOVIES_ERROR,
+    payload: { movies: [], error: true }
+});
+
+export const fetchMoviesData = () => {
+    return dispatch => {
+        getMovies
+            .then(movies => {
+                dispatch(updateMoviesSuccess(movies));
+            })
     }
 };

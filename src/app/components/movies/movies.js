@@ -1,46 +1,47 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-
-import getMovies from '../../api/api';
+import { useDispatch, useSelector  } from 'react-redux';
+import { fetchMoviesData } from '../../store/actions/creators';
 
 const Movies = props => {
-    const [ movies, setMovies ] = useState([]);
+    const movies = useSelector(state => state.movies);
+    const dispatch = useDispatch();
 
     useEffect(() => {
-        getMovies
-            .then(values => {
-                console.log(values);
-                setMovies(values)
-            });
-    }, []);
+        if(movies.length <= 0) {
+            dispatch(fetchMoviesData());
+        }
+    });
 
     return movies.length > 0 ? (
         <ul className="grid grid-cols-5 gap-4 my-8 -mx-2">
             {
-                movies.map(movie => (
-                    <li key={movie.imdbID}>
-                        <article>
-                            <Link to={`${props.match.url}/${movie.imdbID}`}>
-
-                                <h2 className="text-xl font-bold leading-tight">{movie.Title}</h2>
-                                
-                                <img
-                                    className="w-full mt-3 border-2 border-gray-300 p-1"
-                                    src={movie.Poster}
-                                    alt={movie.Title} />
-
-                                <ul className="flex items-center justify-between text-sm mt-2" aria-label={movie.Title + ' Ratings'}>
-                                    <li>
-                                        <span className="font-bold">Metascore:</span> {movie.Metascore}
-                                    </li>
-                                    <li>
-                                        <span className="font-bold">IMDB:</span> {movie.imdbRating}
-                                    </li>
-                                </ul>          
-                            </Link>
-                        </article>
-                    </li>
-                ))
+                movies.map(movie => {
+                    return (
+                        <li key={movie.imdbID}>
+                            <article>
+                                <Link to={`${props.match.url}/${movie.imdbID}`}>
+    
+                                    <h2 className="text-xl font-bold leading-tight">{movie.Title}</h2>
+                                    
+                                    <img
+                                        className="w-full mt-3 border-2 border-gray-300 p-1"
+                                        src={movie.Poster}
+                                        alt={movie.Title} />
+    
+                                    <ul className="flex items-center justify-between text-sm mt-2" aria-label={movie.Title + ' Ratings'}>
+                                        <li>
+                                            <span className="font-bold">Metascore:</span> {movie.Metascore}
+                                        </li>
+                                        <li>
+                                            <span className="font-bold">IMDB:</span> {movie.imdbRating}
+                                        </li>
+                                    </ul>          
+                                </Link>
+                            </article>
+                        </li>
+                    )
+                })
             }
         </ul>
     ) : null
