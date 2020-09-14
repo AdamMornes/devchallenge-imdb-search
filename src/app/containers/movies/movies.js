@@ -14,6 +14,9 @@ const Movies = props => {
         }
     });
 
+    const fallback = error ? <Error /> : null;
+
+    console.log(error);
     const moviesList = movies.map(movie => (
         <li key={movie.imdbID}>
             <MovieCard
@@ -27,7 +30,7 @@ const Movies = props => {
         <ul className="grid grid-cols-5 gap-4 my-8 -mx-2">
             {moviesList}
         </ul>
-    ) : <Error />
+    ) : fallback
 };
 
 export default Movies;
