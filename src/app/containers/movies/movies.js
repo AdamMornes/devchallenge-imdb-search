@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector  } from 'react-redux';
 import { fetchMoviesData } from '@store/actions/creators';
 import MovieCard from '@components/movie-card/movie-card';
+import Error from '@components/error/error';
 
 const Movies = props => {
     const { movies, error } = useSelector(state => state);
@@ -26,7 +27,7 @@ const Movies = props => {
         <ul className="grid grid-cols-5 gap-4 my-8 -mx-2">
             {moviesList}
         </ul>
-    ) : null
+    ) : <Error />
 };
 
 export default Movies;
