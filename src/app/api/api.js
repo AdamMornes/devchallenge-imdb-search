@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const url = 'https://www.omdbapisss.com/?apikey=586d0240';
+const url = 'https://www.omdbapi.com/?apikey=586d0240';
 
 const movieIds = [
     'tt0389790',
