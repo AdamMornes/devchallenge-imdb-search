@@ -16,7 +16,6 @@ const Movies = props => {
 
     const fallback = error ? <Error /> : null;
 
-    console.log(error);
     const moviesList = movies.map(movie => (
         <li key={movie.imdbID}>
             <MovieCard
