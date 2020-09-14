@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector  } from 'react-redux';
+import Heading from '@shared/heading';
 import MovieDetails from '@components/movie-details/movie-details';
 import NotFound from '@shared/not-found';
 import { fetchMoviesData } from '@store/actions/creators';
@@ -18,13 +19,23 @@ const Movie = props => {
     
     movie = movies.find(movie => movie.imdbID === props.match.params.id);
 
-    return movie ? 
-        <MovieDetails
-            title={movie.Title}
-            poster={movie.Poster}
-            plot={movie.Plot}
-            ratings={movie.Ratings}
-        /> : <NotFound />;
+    return (
+        <div className="my-8">
+            <Heading>
+                Movie Details
+            </Heading>
+
+            {
+                movie ? 
+                <MovieDetails
+                    title={movie.Title}
+                    poster={movie.Poster}
+                    plot={movie.Plot}
+                    ratings={movie.Ratings}
+                /> : <NotFound />
+            }
+        </div>
+    )
 };
 
 export default Movie;

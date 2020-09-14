@@ -2,7 +2,7 @@ import React from 'react';
 import imageNotFound from '@images/not-found.jpg';
 
 const MovieDetails = props => (
-    <div className="grid grid-cols-3 gap-8 my-8">
+    <div className="grid grid-cols-3 gap-8">
         <div>
             <img
                 className="w-full border-2 border-gray-300 p-1"
@@ -11,7 +11,7 @@ const MovieDetails = props => (
         </div>
 
         <div className="col-span-2">
-            <h1 className="text-3xl font-bold leading-tight mb-4">{props.title}</h1>
+            <h2 className="text-3xl font-bold leading-tight mb-4">{props.title}</h2>
 
             <p className="mb-4">{props.plot}</p>
                 

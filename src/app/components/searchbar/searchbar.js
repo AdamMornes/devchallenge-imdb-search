@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Searchbar = props => (
-    <form method="post" className="flex">
+    <form method="post" className="flex mb-8">
         <input
             className="flex-1 border-2 border-r-0 border-gray-500 rounded-l-md px-3"
             type="text"

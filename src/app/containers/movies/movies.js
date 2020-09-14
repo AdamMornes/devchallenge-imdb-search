@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector  } from 'react-redux';
 import { fetchMoviesData } from '@store/actions/creators';
+import Heading from '@shared/heading';
 import MovieCard from '@components/movie-card/movie-card';
 import Error from '@components/error/error';
 
@@ -25,11 +26,22 @@ const Movies = props => {
         </li>
     ));
 
-    return moviesList.length > 0 ? (
-        <ul className="grid grid-cols-5 gap-4 my-8">
-            {moviesList}
-        </ul>
-    ) : fallback
+    return (
+        <div className="my-8">
+            <Heading>
+                Movies
+            </Heading>
+
+            {
+                moviesList.length > 0 ? (
+                    <ul className="grid grid-cols-5 gap-4">
+                        {moviesList}
+                    </ul>
+                ) : fallback
+            }
+        </div>
+        
+    )
 };
 
 export default Movies;

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Heading from '@shared/heading';
 import MovieDetails from '@components/movie-details/movie-details';
 import NoResults from '@components/no-results/no-results';
 import Searchbar from '@components/searchbar/searchbar';
@@ -46,8 +47,9 @@ class Search extends Component {
 
         return (
             <div className="my-8">
-                <h1 className="text-2xl font-bold leading-tight mb-4">Search Movies by Title</h1>
-                <hr className="mt-3 mb-4" />
+                <Heading>
+                    Search Movies by Title
+                </Heading>
 
                 <Searchbar
                     input={this.input}
