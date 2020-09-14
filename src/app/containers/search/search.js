@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 import MovieDetails from '@components/movie-details/movie-details';
+import NoResults from '@components/no-results/no-results';
 import Searchbar from '@components/searchbar/searchbar';
 import { queryMovies } from '@api/api';
 
 class Search extends Component {
     state = {
         query: '',
-        movies: []
+        movies: [],
+        dirty: false
     }
 
     input = evt => {
@@ -20,22 +22,28 @@ class Search extends Component {
         if(key === 13 || evt.type === 'click') {
             evt.preventDefault();
 
-            queryMovies(this.state.query)
-                .then(response => {
-                    console.log(response);
-                    let movies = [];
-                    // weird api specific way of handling no results
-                    if(response.Response === 'True') {
-                        movies.push(response);
-                    }
+            this.setState({ dirty: true }); // let the render functino know that user has tried a search
 
-                    this.setState({ movies });
-                })
-                .catch(() => this.setState({ movies: [] }));
+            if(this.state.query) {
+                queryMovies(this.state.query)
+                    .then(response => {
+                        let movies = [];
+
+                        // weird api specific way of handling no results
+                        if(response.Response === 'True') {
+                            movies.push(response);
+                        }
+
+                        this.setState({ movies });
+                    })
+                    .catch(() => this.setState({ movies: [] }));
+            }
         }
     }
 
     render() {
+        let fallback = this.state.dirty ? <NoResults /> : null;
+
         return (
             <div className="my-8">
                 <h1 className="text-2xl font-bold leading-tight mb-4">Search Movies by Title</h1>
@@ -53,7 +61,7 @@ class Search extends Component {
                             poster={movie.Poster}
                             plot={movie.Plot}
                             ratings={movie.Ratings} />
-                    )) : null
+                    )) : fallback
                 }
             </div>
         );
